@@ -3,7 +3,6 @@ use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::spawn_local;
 use yew::prelude::*;
-use yew_router::prelude::*;
 
 #[wasm_bindgen]
 extern "C" {
@@ -73,15 +72,6 @@ pub fn app() -> Html {
 
             <p>{"Click on the Tauri and Yew logos to learn more."}</p>
 
-            <p>
-                {"Recommended IDE setup: "}
-                <a href="https://code.visualstudio.com/" target="_blank">{"VS Code"}</a>
-                {" + "}
-                <a href="https://github.com/tauri-apps/tauri-vscode" target="_blank">{"Tauri"}</a>
-                {" + "}
-                <a href="https://github.com/rust-lang/rust-analyzer" target="_blank">{"rust-analyzer"}</a>
-            </p>
-
             <form class="row" onsubmit={greet}>
                 <input id="greet-input" ref={greet_input_ref} placeholder="Enter a name..." />
                 <button type="submit">{"Greet"}</button>
@@ -90,12 +80,4 @@ pub fn app() -> Html {
             <p><b>{ &*greet_msg }</b></p>
         </main>
     }
-}
-#[function_component(NavItems)]
-pub fn nav_items() -> Html {
-    
-}
-
-pub fn use_navigator<'hook>() -> impl 'hook + ::yew::functional::Hook<Output = Option<Navigator>> {
-
 }
